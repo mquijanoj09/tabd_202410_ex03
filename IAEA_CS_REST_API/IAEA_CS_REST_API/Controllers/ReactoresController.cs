@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using IAEA_CS_REST_API.Services;
 using IAEA_CS_REST_API.Helpers;
+using IAEA_CS_REST_API.Models;
 
 namespace IAEA_CS_REST_API.Controllers
 {
@@ -20,19 +21,39 @@ namespace IAEA_CS_REST_API.Controllers
             return Ok(lasReactores);
         }
 
-        [HttpGet("{fruta_id:int}")]
-        public async Task<IActionResult> GetByIdAsync(int fruta_id)
+        [HttpGet("{reactor_id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int reactor_id)
         {
             try
             {
-                var unaFruta = await _reactorService
-                    .GetByIdAsync(fruta_id);
+                var unaReactor = await _reactorService
+                    .GetByIdAsync(reactor_id);
 
-                return Ok(unaFruta);
+                return Ok(unaReactor);
             }
             catch (AppValidationException error)
             {
                 return NotFound(error.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(Reactor unaReactor)
+        {
+            try
+            {
+                var reactorCreada = await _reactorService
+                    .CreateAsync(unaReactor);
+
+                return Ok(reactorCreada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
             }
         }
     }
