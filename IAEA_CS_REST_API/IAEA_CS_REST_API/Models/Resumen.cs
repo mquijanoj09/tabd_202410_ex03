@@ -7,5 +7,11 @@ namespace IAEA_CS_REST_API.Models
         [JsonPropertyName("reactores")]
         public int Reactores { get; set; } = 0;
 
+        [JsonPropertyName("tipos")]
+        public int Tipos { get; set; } = 0;
+
+        [JsonPropertyName("ubicaciones")]
+        public int Ubicaciones { get; set; } = 0;
+
     }
 }

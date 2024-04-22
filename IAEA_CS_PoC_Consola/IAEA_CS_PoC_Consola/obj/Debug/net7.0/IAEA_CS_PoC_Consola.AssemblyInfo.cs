@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IAEA_CS_PoC_Consola")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d3663231429d8afd0da37e7c1315134b4e9fd2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("IAEA_CS_PoC_Consola")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IAEA_CS_PoC_Consola")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
