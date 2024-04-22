@@ -12,5 +12,7 @@ namespace IAEA_CS_REST_API.Interfaces
         public Task<Reactor> GetByNameAsync(string reactor_nombre);
 
         public Task<bool> CreateAsync(Reactor unaReactor);
+
+        public Task<bool> UpdateAsync(Reactor unaReactor);
     }
 }

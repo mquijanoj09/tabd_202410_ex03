@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IAEA_CS_REST_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2308b0f3b73e3c1cc034ce9f36572f003c929e3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4d96315952bffb9d9beb0e7ff8807ecce70f03b")]
 [assembly: System.Reflection.AssemblyProductAttribute("IAEA_CS_REST_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IAEA_CS_REST_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
