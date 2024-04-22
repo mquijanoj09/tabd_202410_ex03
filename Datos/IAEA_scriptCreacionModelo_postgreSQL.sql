@@ -13,7 +13,7 @@
 docker pull postgres:latest
 
 -- Crear el contenedor
-docker run --name postgres-IAEA -e POSTGRES_PASSWORD=unaClav3 -d -p 5432:5432 postgres:latest
+docker run --name postgres-reactores -e POSTGRES_PASSWORD=unaClav3 -d -p 5432:5432 postgres:latest
 
 -- ****************************************
 -- Creación de base de datos y usuarios
@@ -22,10 +22,10 @@ docker run --name postgres-IAEA -e POSTGRES_PASSWORD=unaClav3 -d -p 5432:5432 po
 -- Con usuario Root:
 
 -- crear el esquema la base de datos
-create database IAEA_db;
+create database reactores_db;
 
 -- Conectarse a la base de datos
-\c IAEA_db;
+\c reactores_db;
 
 -- Creamos un esquema para almacenar todo el modelo de datos del dominio
 create schema core;
@@ -34,24 +34,24 @@ create schema localizacion;
 create schema auditoria;
 
 -- crear el usuario con el que se implementará la creación del modelo
-create user IAEA_app with encrypted password 'unaClav3';
+create user reactores_app with encrypted password 'unaClav3';
 
 -- asignación de privilegios para el usuario
-grant connect on database IAEA_db to IAEA_app;
-grant create on database IAEA_db to IAEA_app;
-grant create, usage on schema core to IAEA_app;
-alter user IAEA_app set search_path to core;
+grant connect on database reactores_db to reactores_app;
+grant create on database reactores_db to reactores_app;
+grant create, usage on schema core to reactores_app;
+alter user reactores_app set search_path to core;
 
 
 -- crear el usuario con el que se conectará la aplicación
-create user IAEA_usr with encrypted password 'unaClav3';
+create user reactores_usr with encrypted password 'unaClav3';
 
 -- asignación de privilegios para el usuario
-grant connect on database IAEA_db to IAEA_usr;
-grant usage on schema core, localizacion to IAEA_usr;
-alter default privileges for user IAEA_app in schema core grant insert, update, delete, select on tables to IAEA_usr;
-alter default privileges for user IAEA_app in schema core grant execute on routines TO IAEA_usr;
-alter user IAEA_usr set search_path to core;
+grant connect on database reactores_db to reactores_usr;
+grant usage on schema core, localizacion to reactores_usr;
+alter default privileges for user reactores_app in schema core grant insert, update, delete, select on tables to reactores_usr;
+alter default privileges for user reactores_app in schema core grant execute on routines TO reactores_usr;
+alter user reactores_usr set search_path to core;
 
 -- ----------------------------------------
 -- Script de creación de tablas y vistas
@@ -111,20 +111,20 @@ insert into core.municipios (id, nombre, departamento_id)
     from core.divipola
 );
 
--- Tabla IAEA
-create table core.IAEA
+-- Tabla reactores
+create table core.reactores
 (
-    id              integer generated always as identity constraint IAEA_pk primary key,
-    nombre          varchar(100) not null constraint IAEA_nombre_uk unique,
+    id              integer generated always as identity constraint reactores_pk primary key,
+    nombre          varchar(100) not null constraint reactores_nombre_uk unique,
     url_wikipedia   varchar(500) not null,
     url_imagen      varchar(500) not null
 );
 
-comment on table core.IAEA is 'IAEA de Colombia';
-comment on column core.IAEA.id is 'id de la fruta';
-comment on column core.IAEA.nombre is 'Nombre de la fruta';
-comment on column core.IAEA.url_wikipedia is 'URL en Wikipedia de la fruta';
-comment on column core.IAEA.url_imagen is 'URL de la imagen en Wikipedia de la fruta';
+comment on table core.reactores is 'reactores de Colombia';
+comment on column core.reactores.id is 'id de la fruta';
+comment on column core.reactores.nombre is 'Nombre de la fruta';
+comment on column core.reactores.url_wikipedia is 'URL en Wikipedia de la fruta';
+comment on column core.reactores.url_imagen is 'URL de la imagen en Wikipedia de la fruta';
 
 -- -------------------------------------------
 -- Tablas de Taxonomia - Información Botánica
@@ -218,16 +218,16 @@ comment on column core.especies.id is 'id de la especie';
 comment on column core.especies.nombre is 'nombre de la especie';
 comment on column core.especies.genero_id is 'ID del genero al que pertenece la especie';
 
-create table core.taxonomia_IAEA
+create table core.taxonomia_reactores
 (
-    especie_id integer not null constraint taxonomia_IAEA_especie_fk references core.especies,
-    fruta_id   integer not null constraint taxonomia_IAEA_fruta_fk references core.IAEA,
-    constraint taxonomia_IAEA_pk primary key (fruta_id, especie_id)
+    especie_id integer not null constraint taxonomia_reactores_especie_fk references core.especies,
+    fruta_id   integer not null constraint taxonomia_reactores_fruta_fk references core.reactores,
+    constraint taxonomia_reactores_pk primary key (fruta_id, especie_id)
 );
 
-comment on table core.taxonomia_IAEA is 'Relación de la fruta con su clasificación taxonómica';
-comment on column core.taxonomia_IAEA.fruta_id is 'Id de la fruta';
-comment on column core.taxonomia_IAEA.especie_id is 'Especie taxonómica a la que pertenece la fruta';
+comment on table core.taxonomia_reactores is 'Relación de la fruta con su clasificación taxonómica';
+comment on column core.taxonomia_reactores.fruta_id is 'Id de la fruta';
+comment on column core.taxonomia_reactores.especie_id is 'Especie taxonómica a la que pertenece la fruta';
 
 -- -------------------------------------------
 -- Tablas de Producción y Cultivo
@@ -241,7 +241,7 @@ create table core.climas
 	altitud_maxima		integer not null
 );
 
-comment on table core.climas is 'Climas donde se producen las IAEA';
+comment on table core.climas is 'Climas donde se producen las reactores';
 comment on column core.climas.id is 'id del clima';
 comment on column core.climas.nombre is 'nombre del clima';
 comment on column core.climas.altitud_minima is 'Altitud mínima del piso térmico';
@@ -256,45 +256,45 @@ create table core.epocas
 	mes_final		integer not null
 );
 
-comment on table core.epocas is 'épocas cuando se producen las IAEA';
+comment on table core.epocas is 'épocas cuando se producen las reactores';
 comment on column core.epocas.id is 'id de la época';
 comment on column core.epocas.nombre is 'nombre de la época';
 comment on column core.epocas.mes_inicio is 'Mes inicial de la época de producción';
 comment on column core.epocas.mes_final is 'Mes final de la época de producción';
 
 -- Tabla Produccion_Fruta
-create table core.produccion_IAEA
+create table core.produccion_reactores
 (
-    fruta_id        integer not null constraint produccion_IAEA_fruta_fk references core.IAEA,
-    clima_id        integer not null constraint produccion_IAEA_clima_fk references core.climas,    
-    epoca_id        integer not null constraint produccion_IAEA_epoca_fk references core.epocas,
-    municipio_id    varchar(10) not null constraint produccion_IAEA_municipio_fk references core.municipios,
-    constraint produccion_IAEA_pk primary key (fruta_id, clima_id, epoca_id, municipio_id)
+    fruta_id        integer not null constraint produccion_reactores_fruta_fk references core.reactores,
+    clima_id        integer not null constraint produccion_reactores_clima_fk references core.climas,    
+    epoca_id        integer not null constraint produccion_reactores_epoca_fk references core.epocas,
+    municipio_id    varchar(10) not null constraint produccion_reactores_municipio_fk references core.municipios,
+    constraint produccion_reactores_pk primary key (fruta_id, clima_id, epoca_id, municipio_id)
 );
 
-comment on table core.produccion_IAEA is 'Relación de la fruta con su producción';
-comment on column core.produccion_IAEA.fruta_id is 'Id de la fruta';
-comment on column core.produccion_IAEA.clima_id is 'Id del clima';
-comment on column core.produccion_IAEA.epoca_id is 'Id de la epoca';
-comment on column core.produccion_IAEA.municipio_id is 'Id del municipio';
+comment on table core.produccion_reactores is 'Relación de la fruta con su producción';
+comment on column core.produccion_reactores.fruta_id is 'Id de la fruta';
+comment on column core.produccion_reactores.clima_id is 'Id del clima';
+comment on column core.produccion_reactores.epoca_id is 'Id de la epoca';
+comment on column core.produccion_reactores.municipio_id is 'Id del municipio';
 
--- Tabla nutricion_IAEA
-create table core.nutricion_IAEA
+-- Tabla nutricion_reactores
+create table core.nutricion_reactores
 (
-    fruta_id        integer not null constraint produccion_IAEA_fruta_fk references core.IAEA,
+    fruta_id        integer not null constraint produccion_reactores_fruta_fk references core.reactores,
     carbohidratos   float not null,
     azucares        float not null,
     grasas          float not null,
     proteinas       float not null,
-    constraint nutricion_IAEA_pk primary key (fruta_id)
+    constraint nutricion_reactores_pk primary key (fruta_id)
 );
 
-comment on table "core"."nutricion_IAEA" is 'Valores nutricionales de la fruta por cada 100 gr';
-comment on column "core"."nutricion_IAEA"."fruta_id" is 'Id de la fruta';
-comment on column "core"."nutricion_IAEA"."carbohidratos" is 'Contenido en gr de carbohidratos';
-comment on column "core"."nutricion_IAEA"."azucares" IS 'Contenido en gr de azúcares';
-comment on column "core"."nutricion_IAEA"."proteinas" is 'Contenido en gr de proteinas';
-comment on column "core"."nutricion_IAEA"."grasas" is 'Contenido en gr de grasas';
+comment on table "core"."nutricion_reactores" is 'Valores nutricionales de la fruta por cada 100 gr';
+comment on column "core"."nutricion_reactores"."fruta_id" is 'Id de la fruta';
+comment on column "core"."nutricion_reactores"."carbohidratos" is 'Contenido en gr de carbohidratos';
+comment on column "core"."nutricion_reactores"."azucares" IS 'Contenido en gr de azúcares';
+comment on column "core"."nutricion_reactores"."proteinas" is 'Contenido en gr de proteinas';
+comment on column "core"."nutricion_reactores"."grasas" is 'Contenido en gr de grasas';
 
 -- -----------------------
 -- Creación de vistas
@@ -326,7 +326,7 @@ create or replace view core.v_info_botanica as
         left join especies e on g.id = e.genero_id
 );
 
-create view core.v_info_IAEA as
+create view core.v_info_reactores as
 (
     select distinct
         tf.fruta_id,
@@ -347,13 +347,13 @@ create view core.v_info_IAEA as
         v.genero_nombre,
         v.especie_id,
         v.especie_nombre
-    from core.IAEA f
-        left join core.taxonomia_IAEA tf on f.id = tf.fruta_id
+    from core.reactores f
+        left join core.taxonomia_reactores tf on f.id = tf.fruta_id
         left join v_info_botanica v on tf.especie_id = v.especie_id
 );
 
--- v_info_produccion_IAEA
-create or replace view core.v_info_produccion_IAEA as
+-- v_info_produccion_reactores
+create or replace view core.v_info_produccion_reactores as
 (
     select distinct
         f.id                fruta_id,
@@ -371,16 +371,16 @@ create or replace view core.v_info_produccion_IAEA as
         m.nombre            municipio_nombre,
         d.id                departamento_id,
         d.nombre            departamento_nombre
-    from core.IAEA f
-        left join  core.produccion_IAEA pf on f.id = pf.fruta_id
+    from core.reactores f
+        left join  core.produccion_reactores pf on f.id = pf.fruta_id
         inner join core.climas c on pf.clima_id = c.id
         inner join core.epocas e on pf.epoca_id = e.id
         inner join core.municipios m on pf.municipio_id = m.id
         inner join core.departamentos d on m.departamento_id = d.id
 );
 
--- v_info_nutricion_IAEA
-create or replace view core.v_info_nutricion_IAEA as
+-- v_info_nutricion_reactores
+create or replace view core.v_info_nutricion_reactores as
 (
     select distinct
         f.id fruta_id,
@@ -391,8 +391,8 @@ create or replace view core.v_info_nutricion_IAEA as
         nf.grasas,
         nf.carbohidratos,
         nf.proteinas
-    from core.IAEA f
-        left join  core.nutricion_IAEA nf on f.id = nf.fruta_id
+    from core.reactores f
+        left join  core.nutricion_reactores nf on f.id = nf.fruta_id
 );
 
 
@@ -400,7 +400,7 @@ create or replace view core.v_info_nutricion_IAEA as
 -- Creación de Procedimientos
 -- ----------------------------
 
--- p_inserta_IAEA
+-- p_inserta_reactores
 
 create or replace procedure core.p_inserta_fruta(
                     in p_nombre varchar,
@@ -411,7 +411,7 @@ as
 $$
     begin
         -- Insertamos la fruta
-        insert into core.IAEA (nombre, url_wikipedia, url_imagen)
+        insert into core.reactores (nombre, url_wikipedia, url_imagen)
         values (p_nombre, p_url_wikipedia, p_url_imagen);
     end;
 $$;
@@ -428,7 +428,7 @@ as
 $$
     begin
         -- Actualizamos la fruta
-        update core.IAEA
+        update core.reactores
         set nombre = p_nombre,
             url_wikipedia = p_url_wikipedia,
             url_imagen = p_url_imagen
@@ -451,16 +451,16 @@ $$
 
         -- Borramos informacion taxonómica
         select count(*) into l_total_registros
-        from core.taxonomia_IAEA
+        from core.taxonomia_reactores
         where fruta_id = p_id;
 
         -- Si hay registros, hay especie por borrar
         if(l_total_registros >0) then
             select especie_id into l_especie_id
-            from core.taxonomia_IAEA
+            from core.taxonomia_reactores
             where fruta_id = p_id;
 
-            delete from core.taxonomia_IAEA
+            delete from core.taxonomia_reactores
             where fruta_id = p_id;
 
             delete from especies
@@ -469,17 +469,17 @@ $$
 
         -- Borramos informacion de Producción
         select count(*) into l_total_registros
-        from core.produccion_IAEA
+        from core.produccion_reactores
         where fruta_id = p_id;
 
-        -- Si hay registros, se borra de la tabla produccion_IAEA
+        -- Si hay registros, se borra de la tabla produccion_reactores
         if(l_total_registros >0) then
-            delete from core.produccion_IAEA
+            delete from core.produccion_reactores
             where fruta_id = p_id;
         end if;
 
         -- borramos la fruta
-        delete from core.IAEA
+        delete from core.reactores
         where id = p_id;
     end;
 $$;
@@ -512,8 +512,8 @@ drop procedure core.p_inserta_fruta;
 
 -- Borrado de vistas
 drop view core.v_info_botanica;
-drop view core.v_info_IAEA;
-drop view core.v_info_produccion_IAEA;
+drop view core.v_info_reactores;
+drop view core.v_info_produccion_reactores;
 
 -- Borrado de tablas
 drop table core.especies;
@@ -524,7 +524,7 @@ drop table core.clases;
 drop table core.divisiones;
 drop table core.reinos;
 
-drop table core.IAEA;
+drop table core.reactores;
 
 drop table core.municipios;
 drop table core.departamentos;

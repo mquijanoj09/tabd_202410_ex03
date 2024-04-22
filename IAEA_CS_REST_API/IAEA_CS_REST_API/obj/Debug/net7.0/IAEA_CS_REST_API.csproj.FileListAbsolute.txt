@@ -1,4 +1,3 @@
-/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/bin/Debug/net7.0/appsettings.Development.json
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/bin/Debug/net7.0/appsettings.json
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/bin/Debug/net7.0/IAEA_CS_REST_API
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/bin/Debug/net7.0/IAEA_CS_REST_API.deps.json
