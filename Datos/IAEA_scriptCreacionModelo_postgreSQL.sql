@@ -123,34 +123,27 @@ comment on column Reactores.fecha is 'Fecha de registro del reactor';
 
 -- Insertar datos en la tabla Paises
 insert into core.Paises (id, nombre) values (1, 'Colombia');
-insert into core.Paises (id, nombre) values (2, 'Estados Unidos');
-insert into core.Paises (id, nombre) values (3, 'Francia');
-insert into core.Paises (id, nombre) values (4, 'Alemania');
-insert into core.Paises (id, nombre) values (5, 'Japón');
+insert into core.Paises (id, nombre) values (2, 'Argentina');
+insert into core.Paises (id, nombre) values (3, 'Brazil');
+insert into core.Paises (id, nombre) values (4, 'Chile');
+insert into core.Paises (id, nombre) values (5, 'Peru');
 
 -- Insertar datos en la tabla Ciudades
-insert into core.Ciudades (id, pais_id, nombre) values (1, 1, 'Medellín');
-insert into core.Ciudades (id, pais_id, nombre) values (2, 1, 'Bogotá');
-insert into core.Ciudades (id, pais_id, nombre) values (3, 2, 'New York');
-insert into core.Ciudades (id, pais_id, nombre) values (4, 2, 'Los Angeles');
-insert into core.Ciudades (id, pais_id, nombre) values (5, 3, 'Paris');
-insert into core.Ciudades (id, pais_id, nombre) values (6, 3, 'Lyon');
-insert into core.Ciudades (id, pais_id, nombre) values (7, 4, 'Berlín');
-insert into core.Ciudades (id, pais_id, nombre) values (8, 4, 'Munich');
-insert into core.Ciudades (id, pais_id, nombre) values (9, 5, 'Tokio');
+insert into core.Ciudades (id, pais_id, nombre) values (1, 1, 'Bogota');
+insert into core.Ciudades (id, pais_id, nombre) values (2, 1, 'Ezeiza');
+insert into core.Ciudades (id, pais_id, nombre) values (3, 1, 'Sao Paulo');
+insert into core.Ciudades (id, pais_id, nombre) values (4, 1, 'Santiago');
+insert into core.Ciudades (id, pais_id, nombre) values (5, 1, 'Lima');
 
 -- Insertar datos en la tabla Tipos
-insert into core.Tipos (id, tipo) values (1, 'Nuclear');
-insert into core.Tipos (id, tipo) values (2, 'Fusión');
-insert into core.Tipos (id, tipo) values (3, 'Fisión');
+insert into core.Tipos (id, tipo) values (1, 'SUBCRIT');
+insert into core.Tipos (id, tipo) values (2, 'TANK');
+insert into core.Tipos (id, tipo) values (3, 'POOL');
+insert into core.Tipos (id, tipo) values (4, 'CRIT ASSEMBLY');
 
 -- Insertar datos en la tabla Reactores
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (1, 1, 1, 'Medellín 1', 1000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (2, 2, 2, 'Bogotá 1', 2000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (3, 3, 3, 'New York 1', 3000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (4, 4, 1, 'Los Angeles 1', 4000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (5, 5, 2, 'Paris 1', 5000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (6, 6, 3, 'Lyon 1', 6000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (7, 7, 1, 'Berlín 1', 7000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (8, 8, 2, 'Munich 1', 8000, 'Activo', '2021-01-01');
-insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (9, 9, 3, 'Tokio 1', 9000, 'Activo', '2021-01-01');
+insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (1, 1, 1, 'RECH-1', 5000, 'EXTENDED SHUTDOWN', '1974-10-13T00:00:00');
+insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (2, 2, 2, 'IPEN/MB-01', 0.003, 'OPERATIONAL', '1965-01-20T00:00:00');
+insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (3, 3, 3, 'IPR-R1', 30000, 'PLANNED', '1988-11-30T00:00:00'); 
+insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (4, 4, 4, 'Argonauta', 0.2, 'PLANNED', '1978-07-20T00:00:00');
+insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (5, 5, 1, 'RECH-2', 5000, 'OPERATIONAL', '1978-07-20T00:00:00');
