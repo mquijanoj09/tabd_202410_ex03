@@ -34,8 +34,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Atlas de Reactores de Colombia - PostgreSQL Version",
-        Description = "API para la gestión Reactores de Colombia"
+        Title = "Reactores Nucleares para Investigación - PostgreSQL Version",
+        Description = "API para la gestión Reactores Nucleares para Investigación"
     });
 });
 
@@ -51,7 +51,7 @@ if (app.Environment.IsDevelopment())
 //Modificamos el encabezado de las peticiones para ocultar el web server utilizado
 app.Use(async (context, next) =>
 {
-    context.Response.Headers.Append("Server", "FruitAtlasServer");
+    context.Response.Headers.Append("Server", "ReactoresServer");
     await next();
 });
 

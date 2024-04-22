@@ -33,13 +33,17 @@ namespace IAEA_CS_REST_API.Services
             if (unaReactor.Nombre!.Length == 0)
                 throw new AppValidationException("No se puede insertar una reactor con nombre nulo");
 
-            //Validamos que la reactor tenga url_wikipedia
-            if (unaReactor.Url_Wikipedia!.Length == 0)
-                throw new AppValidationException("No se puede insertar una reactor con Url de Wikipedia nulo");
+            //Validamos que la reactor tenga potencia
+            if (unaReactor.Potencia! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con potencia nulo");
 
-            //Validamos que la reactor tenga url_imagen
-            if (unaReactor.Url_Imagen!.Length == 0)
-                throw new AppValidationException("No se puede insertar una reactor con Url de la imagen nulo");
+            //Validamos que la reactor tenga estado
+            if (unaReactor.Estado!.Length == 0)
+                throw new AppValidationException("No se puede insertar una reactor con estado nulo");
+
+            //Validamos que la reactor tenga fecha
+            if (unaReactor.Fecha == DateTime.MinValue)
+                throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Validamos que no exista previamente una reactor con ese nombre
             var reactorExistente = await _reactorRepository
@@ -77,13 +81,17 @@ namespace IAEA_CS_REST_API.Services
             if (unaReactor.Nombre!.Length == 0)
                 throw new AppValidationException("No se puede actualizar una reactor con nombre nulo");
 
-            //Validamos que la reactor tenga url_wikipedia
-            if (unaReactor.Url_Wikipedia!.Length == 0)
-                throw new AppValidationException("No se puede actualizar una reactor con Url de Wikipedia nulo");
+            //Validamos que la reactor tenga potencia
+            if (unaReactor.Potencia! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con potencia nulo");
 
-            //Validamos que la reactor tenga url_imagen
-            if (unaReactor.Url_Imagen!.Length == 0)
-                throw new AppValidationException("No se puede actualizar una reactor con Url de la imagen nulo");
+            //Validamos que la reactor tenga estado
+            if (unaReactor.Estado!.Length == 0)
+                throw new AppValidationException("No se puede insertar una reactor con estado nulo");
+
+            //Validamos que la reactor tenga fecha
+            if (unaReactor.Fecha == DateTime.MinValue)
+                throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Que la reactor exista con ese Id:            
             var reactorExistente = await _reactorRepository

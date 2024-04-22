@@ -16,8 +16,8 @@ namespace IAEA_CS_REST_API.Repositories
         {
             var conexion = contextoDB.CreateConnection();
 
-            string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
-                                  "FROM core.reactors " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+                                  "FROM core.Reactores " +
                                   "ORDER BY id DESC";
 
             var resultadoEstilos = await conexion
@@ -35,8 +35,8 @@ namespace IAEA_CS_REST_API.Repositories
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@reactor_id", reactor_id, System.Data.DbType.Int32,  System.Data.ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
-                                  "FROM core.reactors " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+                                  "FROM core.Reactores " +
                                   "WHERE id = @reactor_id " +
                                   "ORDER BY nombre";
 
@@ -59,8 +59,8 @@ namespace IAEA_CS_REST_API.Repositories
             parametrosSentencia.Add("@reactor_nombre", reactor_nombre,
                                     DbType.String, ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
-                                  "FROM core.reactors " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+                                  "FROM core.Reactores " +
                                   "WHERE nombre = @reactor_nombre " +
                                   "ORDER BY nombre";
 
@@ -85,8 +85,9 @@ namespace IAEA_CS_REST_API.Repositories
                 var parametros = new
                 {
                     p_nombre = unaReactor.Nombre,
-                    p_url_wikipedia = unaReactor.Url_Wikipedia,
-                    p_url_imagen = unaReactor.Url_Imagen
+                    p_potencia = unaReactor.Potencia,
+                    p_estado = unaReactor.Estado,
+                    p_fecha = unaReactor.Fecha,
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(
@@ -118,8 +119,9 @@ namespace IAEA_CS_REST_API.Repositories
                 {
                     p_id = unaReactor.Id,
                     p_nombre = unaReactor.Nombre,
-                    p_url_wikipedia = unaReactor.Url_Wikipedia,
-                    p_url_imagen = unaReactor.Url_Imagen
+                    p_potencia = unaReactor.Potencia,
+                    p_estado = unaReactor.Estado,
+                    p_fecha = unaReactor.Fecha,
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(

@@ -10,10 +10,13 @@ namespace IAEA_CS_REST_API.Models
         [JsonPropertyName("nombre")]
         public string? Nombre { get; set; } = string.Empty;
 
-        [JsonPropertyName("url_wikipedia")]
-        public string? Url_Wikipedia { get; set; } = string.Empty;
+        [JsonPropertyName("potencia")]
+        public float? Potencia { get; set; } = 0;
 
-        [JsonPropertyName("url_imagen")]
-        public string? Url_Imagen { get; set; } = string.Empty;
+        [JsonPropertyName("estado")]
+        public string? Estado { get; set; } = string.Empty;
+
+        [JsonPropertyName("fecha")]
+        public DateTime? Fecha { get; set; } = new DateTime(2000, 1, 1);
     }
 }

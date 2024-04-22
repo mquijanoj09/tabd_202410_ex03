@@ -1,0 +1,7 @@
+﻿@IAEA_CS_REST_API_HostAddress = https://localhost:7024
+
+GET {{IAEA_CS_REST_API_HostAddress}}/api/Resumen
+Accept: application/json
+
+###
+

@@ -1,4 +1,7 @@
-﻿<Properties StartupConfiguration="{1FF11AE2-6133-4834-A4BE-D2872A18E56E}|ReactoresAPI">
+﻿<Properties StartupConfiguration="{1FF11AE2-6133-4834-A4BE-D2872A18E56E}|AtlasFrutasAPI">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_REST_API/Services/ReactorService.cs">
     <Files>
       <File FileName="IAEA_CS_REST_API/Repositories/ResumenRepository.cs" Line="5" Column="1" />
@@ -24,11 +27,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
 </Properties>
