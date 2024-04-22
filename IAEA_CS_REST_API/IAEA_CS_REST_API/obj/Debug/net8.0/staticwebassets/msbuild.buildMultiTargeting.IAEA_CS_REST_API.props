@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/IAEA_CS_REST_API.props" />
+</Project>

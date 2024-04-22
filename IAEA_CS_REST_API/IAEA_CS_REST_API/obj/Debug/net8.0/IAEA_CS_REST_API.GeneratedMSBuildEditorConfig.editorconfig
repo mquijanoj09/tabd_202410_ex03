@@ -1,5 +1,5 @@
 is_global = true
-build_property.TargetFramework = net7.0
+build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -12,7 +12,7 @@ build_property.RootNamespace = IAEA_CS_REST_API
 build_property.ProjectDir = /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 7.0
+build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API

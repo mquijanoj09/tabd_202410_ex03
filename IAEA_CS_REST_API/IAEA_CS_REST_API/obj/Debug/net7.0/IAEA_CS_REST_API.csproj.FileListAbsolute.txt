@@ -45,3 +45,4 @@
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/obj/Debug/net7.0/IAEA_CS_REST_API.pdb
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/obj/Debug/net7.0/IAEA_CS_REST_API.genruntimeconfig.cache
 /Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/obj/Debug/net7.0/ref/IAEA_CS_REST_API.dll
+/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial3-MQJ-421383/IAEA_CS_REST_API/IAEA_CS_REST_API/obj/Debug/net7.0/IAEA_CS_REST_API.sourcelink.json

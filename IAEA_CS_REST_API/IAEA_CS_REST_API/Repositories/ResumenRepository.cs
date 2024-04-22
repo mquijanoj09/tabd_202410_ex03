@@ -5,14 +5,9 @@ using IAEA_CS_REST_API.Models;
 
 namespace IAEA_CS_REST_API.Repositories
 {
-    public class ResumenRepository : IResumenRepository
+    public class ResumenRepository(PgsqlDbContext unContexto) : IResumenRepository
     {
-        private readonly PgsqlDbContext contextoDB;
-
-        public ResumenRepository(PgsqlDbContext unContexto)
-        {
-            contextoDB = unContexto;
-        }
+        private readonly PgsqlDbContext contextoDB = unContexto;
 
         public async Task<Resumen> GetAllAsync()
         {
@@ -23,10 +18,6 @@ namespace IAEA_CS_REST_API.Repositories
             //Total Ubicaciones
             string sentenciaSQL = "SELECT COUNT(id) total FROM core.frutas";
             unResumen.Frutas = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
-
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.familias";
-            unResumen.Taxonomia_Familias = await conexion
                 .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
 
             sentenciaSQL = "SELECT COUNT(id) total FROM core.departamentos";

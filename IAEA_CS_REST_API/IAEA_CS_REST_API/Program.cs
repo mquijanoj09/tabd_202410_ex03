@@ -1,6 +1,6 @@
-﻿using IAEA_CS_REST_API.DbContexts;
+﻿using IAEA_CS_REST_API.Repositories;
+using IAEA_CS_REST_API.DbContexts;
 using IAEA_CS_REST_API.Interfaces;
-using IAEA_CS_REST_API.Repositories;
 using IAEA_CS_REST_API.Services;
 using Microsoft.OpenApi.Models;
 
@@ -13,10 +13,11 @@ builder.Services.AddSingleton<PgsqlDbContext>();
 
 //Los repositorios
 builder.Services.AddScoped<IResumenRepository, ResumenRepository>();
-//builder.Services.AddScoped<IReactorRepository, ReactorRepository>();
+builder.Services.AddScoped<IReactorRepository, ReactorRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ResumenService>();
+builder.Services.AddScoped<ReactorService>();
 
 // Add services to the container.
 
@@ -33,8 +34,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Reactores Nucleares Investigación - PostgreSQL Version",
-        Description = "API para la gestión Reactores Nucleares Investigación"
+        Title = "Atlas de Reactores de Colombia - PostgreSQL Version",
+        Description = "API para la gestión Reactores de Colombia"
     });
 });
 
@@ -50,7 +51,7 @@ if (app.Environment.IsDevelopment())
 //Modificamos el encabezado de las peticiones para ocultar el web server utilizado
 app.Use(async (context, next) =>
 {
-    context.Response.Headers.Append("Server", "ReactoresServer");
+    context.Response.Headers.Append("Server", "FruitAtlasServer");
     await next();
 });
 

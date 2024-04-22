@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'ReactoresAPI' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'AtlasFrutasAPI' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.18" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -22,6 +22,7 @@
     <None Remove="DbContexts\" />
     <None Remove="Services\" />
     <None Remove="Interfaces\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
@@ -30,5 +31,6 @@
     <Folder Include="DbContexts\" />
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>
