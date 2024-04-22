@@ -1,4 +1,29 @@
 ﻿<Properties StartupConfiguration="{F346B815-D770-4ED5-95B7-B0E441D71345}|https">
-  <MonoDevelop.Ide.ItemProperties.IAEA__CS__PoC__Consola FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_PoC_Consola/appsettings.json">
+    <Files>
+      <File FileName="IAEA_CS_PoC_Consola/Reactor.cs" Line="14" Column="1" />
+      <File FileName="IAEA_CS_PoC_Consola/PoC_pgsql.cs" Line="28" Column="91" />
+      <File FileName="IAEA_CS_PoC_Consola/AccesoDatosPgsql.cs" Line="17" Column="68" />
+      <File FileName="IAEA_CS_PoC_Consola/Program.cs" Line="11" Column="10" />
+      <File FileName="IAEA_CS_PoC_Consola/appsettings.json" Line="3" Column="95" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IAEA_CS_PoC_Consola">
+            <Node name="IAEA_CS_PoC_Consola" expanded="True">
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IAEA__CS__PoC__Consola PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,18 +1,20 @@
 ﻿<Properties StartupConfiguration="{1FF11AE2-6133-4834-A4BE-D2872A18E56E}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="IAEA_CS_REST_API" expanded="True" selected="True" />
+          <Node name="IAEA_CS_REST_API" expanded="True">
+            <Node name="IAEA_CS_REST_API" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
-  <MultiItemStartupConfigurations />
 </Properties>
