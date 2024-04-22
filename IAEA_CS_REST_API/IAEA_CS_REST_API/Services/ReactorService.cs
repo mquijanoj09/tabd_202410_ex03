@@ -117,5 +117,34 @@ namespace IAEA_CS_REST_API.Services
 
             return (reactorExistente);
         }
+
+        public async Task<string> RemoveAsync(int reactor_id)
+        {
+            string nombreReactorEliminada = string.Empty;
+
+            //Validamos que exista una reactor con ese Id
+            Reactor unaReactor = await _reactorRepository
+                .GetByIdAsync(reactor_id);
+
+            if (unaReactor.Id == 0)
+                throw new AppValidationException($"Reactor no encontrada con el id {reactor_id}");
+
+            nombreReactorEliminada = unaReactor.Nombre!;
+
+            try
+            {
+                bool resultadoAccion = await _reactorRepository
+                    .RemoveAsync(reactor_id);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return nombreReactorEliminada;
+        }
     }
 }

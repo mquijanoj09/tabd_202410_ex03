@@ -14,5 +14,7 @@ namespace IAEA_CS_REST_API.Interfaces
         public Task<bool> CreateAsync(Reactor unaReactor);
 
         public Task<bool> UpdateAsync(Reactor unaReactor);
+
+        public Task<bool> RemoveAsync(int reactor_id);
     }
 }

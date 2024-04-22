@@ -76,5 +76,21 @@ namespace IAEA_CS_REST_API.Controllers
                 return BadRequest($"Error de operacion en DB: {error.Message}");
             }
         }
+
+        [HttpDelete("{reactor_id:int}")]
+        public async Task<IActionResult> RemoveAsync(int reactor_id)
+        {
+            try
+            {
+                var nombreReactorBorrada = await _reactorService
+                    .RemoveAsync(reactor_id);
+
+                return Ok($"La reactor {nombreReactorBorrada} fue eliminada correctamente!");
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
     }
 }
