@@ -20,10 +20,10 @@ namespace IAEA_CS_REST_API.Repositories
                                   "FROM core.Reactores " +
                                   "ORDER BY id DESC";
 
-            var resultadoEstilos = await conexion
+            var resultadoReactores = await conexion
                 .QueryAsync<Reactor>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoEstilos;
+            return resultadoReactores;
         }
 
         public async Task<Reactor> GetByIdAsync(int reactor_id)
