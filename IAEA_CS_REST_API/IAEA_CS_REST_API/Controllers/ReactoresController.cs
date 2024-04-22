@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using IAEA_CS_REST_API.Services;
+using IAEA_CS_REST_API.Helpers;
 
 namespace IAEA_CS_REST_API.Controllers
 {
@@ -17,6 +18,22 @@ namespace IAEA_CS_REST_API.Controllers
                 .GetAllAsync();
 
             return Ok(lasReactores);
+        }
+
+        [HttpGet("{fruta_id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int fruta_id)
+        {
+            try
+            {
+                var unaFruta = await _reactorService
+                    .GetByIdAsync(fruta_id);
+
+                return Ok(unaFruta);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
         }
     }
 }
