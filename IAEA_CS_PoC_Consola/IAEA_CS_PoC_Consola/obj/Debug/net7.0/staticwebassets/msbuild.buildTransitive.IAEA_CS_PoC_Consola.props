@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/IAEA_CS_PoC_Consola.props" />
-</Project>

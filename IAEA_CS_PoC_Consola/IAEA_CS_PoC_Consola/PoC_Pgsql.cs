@@ -1,5 +1,6 @@
 ﻿using System;
 using IAEA_CS_PoC_Consola;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace IAEA_CS_PoC_Consola
 {
@@ -23,9 +24,10 @@ namespace IAEA_CS_PoC_Consola
             //C del CRUD - Creación de un nuevo registro - INSERT
             Reactor nuevaReactor = new()
             {
-                Nombre = "Zapote",
-                Url_Wikipedia = "https://es.wikipedia.org/wiki/Matisia_cordata",
-                Url_Imagen = "https://es.wikipedia.org/wiki/Matisia_cordata#/media/Archivo:Zapote_reactor.jpg"
+                Nombre = "NUR",
+                Potencia = 1,
+                Estado = "OPERATIONAL",
+                Fecha = new DateTime(2000, 1, 1)
             };
 
             Console.WriteLine($"\nRegistro de nueva reactor: {nuevaReactor.Nombre}:");
@@ -51,7 +53,7 @@ namespace IAEA_CS_PoC_Consola
             //U del CRUD - Actualización de un nuevo registro - UPDATE
             Reactor reactorActualizada = AccesoDatosPgsql.ObtieneReactor("Mango");
 
-            reactorActualizada.Nombre = "Manguito Biche";
+            reactorActualizada.Nombre = "RRR";
             Console.WriteLine($"\n\nActualizando la reactor No. {reactorActualizada.Id} " +
                 $"al nuevo nombre de {reactorActualizada.Nombre}...");
 
@@ -74,7 +76,7 @@ namespace IAEA_CS_PoC_Consola
             Console.ReadKey();
 
             //Devolvemos la reactor a su valor orignal
-            reactorActualizada.Nombre = "Mango";
+            reactorActualizada.Nombre = "FRH";
             Console.WriteLine($"Devolviendo el nombre original a la reactor: {reactorActualizada.Nombre}");
 
             AccesoDatosPgsql.ActualizaReactor(reactorActualizada);
@@ -135,8 +137,9 @@ namespace IAEA_CS_PoC_Consola
             foreach (Reactor unaReactor in lasReactores)
             {
                 Console.WriteLine($"Id: {unaReactor.Id}\tNombre: {unaReactor.Nombre}");
-                Console.WriteLine($"Enlace Wikipedia: {unaReactor.Url_Wikipedia}");
-                Console.WriteLine($"Enlace Imagen: {unaReactor.Url_Imagen}\n");
+                Console.WriteLine($"Potencia: {unaReactor.Potencia}");
+                Console.WriteLine($"Estado: {unaReactor.Estado}\n");
+                Console.WriteLine($"Fecha: {unaReactor.Fecha}\n");
             }
         }
     }

@@ -42,7 +42,7 @@ namespace IAEA_CS_PoC_Consola
             string? cadenaConexion = ObtieneCadenaConexion();
 
             using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
-            string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen FROM reactores ORDER BY nombre";
+            string sentenciaSQL = "SELECT id, nombre, nombre, potencia, estado, fecha FROM reactores ORDER BY nombre";
             var resultadoReactores = cxnDB.Query<Reactor>(sentenciaSQL, new DynamicParameters());
 
             return resultadoReactores.AsList();
@@ -64,7 +64,7 @@ namespace IAEA_CS_PoC_Consola
             parametrosSentencia.Add("@id_reactor", idReactor,
                                     DbType.Int32, ParameterDirection.Input);
 
-            string? sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
+            string? sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
                                     "FROM reactores " +
                                     "WHERE id = @id_reactor";
 
@@ -92,7 +92,7 @@ namespace IAEA_CS_PoC_Consola
             parametrosSentencia.Add("@nombre_reactor", nombreReactor,
                                     DbType.String, ParameterDirection.Input);
 
-            string? sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
+            string? sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
                                     "FROM reactores " +
                                     "WHERE nombre = @nombre_reactor";
 
@@ -137,8 +137,8 @@ namespace IAEA_CS_PoC_Consola
 
                 try
                 {
-                    string insertaReactorSQL = "INSERT INTO reactores (nombre, url_wikipedia, url_imagen) " +
-                                               "VALUES (@Nombre, @Url_Wikipedia, @Url_Imagen)";
+                    string insertaReactorSQL = "INSERT INTO reactores (nombre, potencia, estado, fecha) " +
+                                               "VALUES (@Nombre, @Potencia, @Estado, @Fecha)";
 
                     cantidadFilas = cxnDB.Execute(insertaReactorSQL, unaReactor);
                 }
@@ -210,7 +210,7 @@ namespace IAEA_CS_PoC_Consola
                 //Terminadas las validaciones, realizamos el update
                 try
                 {
-                    string actualizaReactoresSql = "UPDATE reactores SET nombre = @Nombre, url_wikipedia = @Url_Wikipedia, url_imagen = @Url_Imagen " +
+                    string actualizaReactoresSql = "UPDATE reactores SET nombre = @Nombre, potencia = @Potencia, estado = @Estado, fecha = @Fecha " +
                         "WHERE id = @Id"; ;
 
                     //Aqui no usamos parámetros dinámicos, pasamos el objeto!!!

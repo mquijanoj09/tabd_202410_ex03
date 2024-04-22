@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            Console.WriteLine("PoC - Atlas de Frutas de Colombia \n");
+            Console.WriteLine("PoC - Reactores Nucleares Investigación \n");
 
             Console.WriteLine("Ejecutando PoC en PostgreSQL...");
             PoC_Pgsql.Ejecuta_PoC();

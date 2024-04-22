@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("IAEA_CS_REST_API")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("IAEA_CS_PoC_Consola")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+703d53a34f4e8c0fe005f3c7fb4e0cb77b80aa4e")]
-[assembly: System.Reflection.AssemblyProductAttribute("IAEA_CS_REST_API")]
-[assembly: System.Reflection.AssemblyTitleAttribute("IAEA_CS_REST_API")]
+[assembly: System.Reflection.AssemblyProductAttribute("IAEA_CS_PoC_Consola")]
+[assembly: System.Reflection.AssemblyTitleAttribute("IAEA_CS_PoC_Consola")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
