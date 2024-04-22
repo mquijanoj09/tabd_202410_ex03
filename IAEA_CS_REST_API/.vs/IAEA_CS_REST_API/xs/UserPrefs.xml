@@ -1,25 +1,18 @@
-﻿<Properties StartupConfiguration="{FF49DEAB-E677-435C-98A6-7D35C697F5EE}|Default">
+﻿<Properties StartupConfiguration="{1FF11AE2-6133-4834-A4BE-D2872A18E56E}|https">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_REST_API/Program.cs">
-    <Files>
-      <File FileName="IAEA_CS_REST_API/Program.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="IAEA_CS_REST_API" expanded="True">
-            <Node name="IAEA_CS_REST_API">
-              <Node name="Program.cs" selected="True" />
-            </Node>
-          </Node>
+          <Node name="IAEA_CS_REST_API" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
+  <MultiItemStartupConfigurations />
 </Properties>

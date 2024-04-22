@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.11
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAEA_CS_REST_API", "IAEA_CS_REST_API\IAEA_CS_REST_API.csproj", "{FF49DEAB-E677-435C-98A6-7D35C697F5EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAEA_CS_REST_API", "IAEA_CS_REST_API\IAEA_CS_REST_API.csproj", "{1FF11AE2-6133-4834-A4BE-D2872A18E56E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF49DEAB-E677-435C-98A6-7D35C697F5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF49DEAB-E677-435C-98A6-7D35C697F5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF49DEAB-E677-435C-98A6-7D35C697F5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF49DEAB-E677-435C-98A6-7D35C697F5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF11AE2-6133-4834-A4BE-D2872A18E56E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF11AE2-6133-4834-A4BE-D2872A18E56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF11AE2-6133-4834-A4BE-D2872A18E56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF11AE2-6133-4834-A4BE-D2872A18E56E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ED40D6A2-C71C-4356-8A12-E32B4130D70B}
+		SolutionGuid = {EB01D970-46EA-4D4C-874D-5F2B3D34BA43}
 	EndGlobalSection
 EndGlobal

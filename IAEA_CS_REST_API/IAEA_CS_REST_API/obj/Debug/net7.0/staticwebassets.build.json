@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cT8G9aXaRFbQ8vC5t2OLF0NHECz4k+GkHgEA4BFifEE=",
+  "Source": "IAEA_CS_REST_API",
+  "BasePath": "_content/IAEA_CS_REST_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
