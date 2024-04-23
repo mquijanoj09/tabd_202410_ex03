@@ -1,27 +1,22 @@
 ﻿<Properties StartupConfiguration="{1FF11AE2-6133-4834-A4BE-D2872A18E56E}|AtlasFrutasAPI">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.IAEA__CS__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_REST_API/appsettings.json">
     <Files>
       <File FileName="IAEA_CS_REST_API/Controllers/UbicacionesController.cs" />
       <File FileName="IAEA_CS_REST_API/Interfaces/IUbicacionRepository.cs" />
-      <File FileName="IAEA_CS_REST_API/Models/Ubicacion.cs" Line="1" Column="1" />
-      <File FileName="IAEA_CS_REST_API/Repositories/UbicacionRepository.cs" Line="12" Column="6" />
-      <File FileName="IAEA_CS_REST_API/Services/UbicacionService.cs" Line="39" Column="10" />
-      <File FileName="IAEA_CS_REST_API/Models/Reactor.cs" Line="14" Column="50" />
-      <File FileName="IAEA_CS_REST_API/Services/ReactorService.cs" Line="1" Column="1" />
-      <File FileName="IAEA_CS_REST_API/Repositories/ReactorRepository.cs" Line="19" Column="78" />
-      <File FileName="IAEA_CS_REST_API/Program.cs" Line="1" Column="1" />
+      <File FileName="IAEA_CS_REST_API/Models/Ubicacion.cs" />
+      <File FileName="IAEA_CS_REST_API/Repositories/UbicacionRepository.cs" />
+      <File FileName="IAEA_CS_REST_API/Services/UbicacionService.cs" />
+      <File FileName="IAEA_CS_REST_API/Models/Reactor.cs" />
+      <File FileName="IAEA_CS_REST_API/Services/ReactorService.cs" />
+      <File FileName="IAEA_CS_REST_API/Repositories/ReactorRepository.cs" />
+      <File FileName="IAEA_CS_REST_API/Program.cs" />
       <File FileName="IAEA_CS_REST_API/appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="IAEA_CS_REST_API">
+          <Node name="IAEA_CS_REST_API" expanded="True">
             <Node name="IAEA_CS_REST_API" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
@@ -34,5 +29,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

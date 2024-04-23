@@ -16,7 +16,7 @@ namespace IAEA_CS_REST_API.Repositories
         {
             var conexion = contextoDB.CreateConnection();
 
-            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha, tipo_id, ciudad_id " +
                                   "FROM core.Reactores " +
                                   "ORDER BY id DESC";
 
@@ -35,7 +35,7 @@ namespace IAEA_CS_REST_API.Repositories
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@reactor_id", reactor_id, System.Data.DbType.Int32,  System.Data.ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha, tipo_id, ciudad_id " +
                                   "FROM core.Reactores " +
                                   "WHERE id = @reactor_id " +
                                   "ORDER BY nombre";
@@ -59,7 +59,7 @@ namespace IAEA_CS_REST_API.Repositories
             parametrosSentencia.Add("@reactor_nombre", reactor_nombre,
                                     DbType.String, ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha " +
+            string sentenciaSQL = "SELECT id, nombre, potencia, estado, fecha, tipo_id, ciudad_id " +
                                   "FROM core.Reactores " +
                                   "WHERE nombre = @reactor_nombre " +
                                   "ORDER BY nombre";
@@ -88,6 +88,8 @@ namespace IAEA_CS_REST_API.Repositories
                     p_potencia = unaReactor.Potencia,
                     p_estado = unaReactor.Estado,
                     p_fecha = unaReactor.Fecha,
+                    p_ciudad_id = unaReactor.Ciudad_id,
+                    p_tipo_id = unaReactor.Tipo_id
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(
@@ -122,6 +124,8 @@ namespace IAEA_CS_REST_API.Repositories
                     p_potencia = unaReactor.Potencia,
                     p_estado = unaReactor.Estado,
                     p_fecha = unaReactor.Fecha,
+                    p_ciudad_id = unaReactor.Ciudad_id,
+                    p_tipo_id = unaReactor.Tipo_id
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(

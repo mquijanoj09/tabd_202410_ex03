@@ -21,9 +21,8 @@ builder.Services.AddScoped<IUbicacionRepository, UbicacionRepository>();
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ResumenService>();
 builder.Services.AddScoped<ReactorService>();
-builder.Services.AddScoped<TipoRepository>();
-builder.Services.AddScoped<UbicacionRepository>();
-
+builder.Services.AddScoped<TipoService>();
+builder.Services.AddScoped<UbicacionService>();
 
 
 // Add services to the container.

@@ -14,10 +14,10 @@ namespace IAEA_CS_REST_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var lasTipos = await _tipoService
+            var losTipos = await _tipoService
                 .GetAllAsync();
 
-            return Ok(lasTipos);
+            return Ok(losTipos);
         }
 
         [HttpGet("{tipo_id:int}")]
@@ -25,10 +25,10 @@ namespace IAEA_CS_REST_API.Controllers
         {
             try
             {
-                var unaTipo = await _tipoService
+                var unTipo = await _tipoService
                     .GetByIdAsync(tipo_id);
 
-                return Ok(unaTipo);
+                return Ok(unTipo);
             }
             catch (AppValidationException error)
             {

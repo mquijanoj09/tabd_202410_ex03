@@ -15,9 +15,16 @@ namespace IAEA_CS_REST_API.Repositories
 
             var conexion = contextoDB.CreateConnection();
 
-            //Total Ubicaciones
             string sentenciaSQL = "SELECT COUNT(id) total FROM core.Reactores";
             unResumen.Reactores = await conexion
+                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+
+            sentenciaSQL = "SELECT COUNT(id) total FROM core.Tipos";
+            unResumen.Tipos = await conexion
+                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+
+            sentenciaSQL = "SELECT COUNT(id) total FROM core.Ciudades";
+            unResumen.Ubicaciones = await conexion
                 .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
 
             return unResumen;

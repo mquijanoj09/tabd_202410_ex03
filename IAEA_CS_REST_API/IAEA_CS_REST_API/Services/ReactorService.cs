@@ -45,6 +45,14 @@ namespace IAEA_CS_REST_API.Services
             if (unaReactor.Fecha == DateTime.MinValue)
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
+            //Validamos que la reactor tenga ciudad
+            if (unaReactor.Ciudad_id! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
+
+            //Validamos que la reactor tenga tipo
+            if (unaReactor.Tipo_id! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
+
             //Validamos que no exista previamente una reactor con ese nombre
             var reactorExistente = await _reactorRepository
                 .GetByNameAsync(unaReactor.Nombre);
@@ -92,6 +100,14 @@ namespace IAEA_CS_REST_API.Services
             //Validamos que la reactor tenga fecha
             if (unaReactor.Fecha == DateTime.MinValue)
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
+
+            //Validamos que la reactor tenga ciudad
+            if (unaReactor.Ciudad_id! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
+
+            //Validamos que la reactor tenga tipo
+            if (unaReactor.Tipo_id! == 0)
+                throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
 
             //Que la reactor exista con ese Id:            
             var reactorExistente = await _reactorRepository

@@ -7,8 +7,8 @@ namespace IAEA_CS_REST_API.Models
         [JsonPropertyName("id")]
         public int Id { get; set; } = 0;
 
-        [JsonPropertyName("nombre")]
-        public string? Nombre { get; set; } = string.Empty;
+        [JsonPropertyName("tipo_nombre")]
+        public string? Tipo_nombre { get; set; } = string.Empty;
 
     }
 }

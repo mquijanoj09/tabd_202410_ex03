@@ -18,5 +18,12 @@ namespace IAEA_CS_REST_API.Models
 
         [JsonPropertyName("fecha")]
         public DateTime? Fecha { get; set; } = new DateTime(2000, 1, 1);
+
+        [JsonPropertyName("tipo_id")]
+        public int? Tipo_id { get; set; } =  0;
+
+        [JsonPropertyName("ciudad_id")]
+        public int? Ciudad_id { get; set; } = 0;
+
     }
 }

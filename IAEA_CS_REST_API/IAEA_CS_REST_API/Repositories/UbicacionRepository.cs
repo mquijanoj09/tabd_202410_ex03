@@ -17,7 +17,7 @@ namespace IAEA_CS_REST_API.Repositories
             var conexion = contextoDB.CreateConnection();
 
             string sentenciaSQL = "SELECT id, nombre " +
-                                  "FROM core.Cuidades " +
+                                  "FROM core.Ciudades " +
                                   "ORDER BY id DESC";
 
             var resultadoUbicaciones = await conexion
@@ -36,7 +36,7 @@ namespace IAEA_CS_REST_API.Repositories
             parametrosSentencia.Add("@ubicacion_id", ubicacion_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre " +
-                                  "FROM core.Cuidades " +
+                                  "FROM core.Ciudades " +
                                   "WHERE id = @ubicacion_id " +
                                   "ORDER BY nombre";
 

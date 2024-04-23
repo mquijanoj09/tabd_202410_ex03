@@ -147,3 +147,57 @@ insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fe
 insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (3, 3, 3, 'IPR-R1', 30000, 'PLANNED', '1988-11-30T00:00:00'); 
 insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (4, 4, 4, 'Argonauta', 0.2, 'PLANNED', '1978-07-20T00:00:00');
 insert into core.Reactores (id, cuidad_id, tipo_id, nombre, potencia, estado, fecha) values (5, 5, 1, 'RECH-2', 5000, 'OPERATIONAL', '1978-07-20T00:00:00');
+
+
+-- ----------------------------
+-- Creación de Procedimientos
+-- ----------------------------
+
+-- p_inserta_reactores
+create or replace procedure core.p_inserta_reactor(
+                    in p_nombre         varchar,
+                    in potencia          float,
+                    in estado            varchar,
+                    in fecha             timestamp
+) language plpgsql as
+$$
+    begin
+        -- Insertamos la reactor
+        insert into core.reactores (nombre, potencia, estado, fecha)
+        values (p_nombre, p_potencia, p_estado, p_fecha);
+    end;
+$$;
+
+-- p_actualiza_reactor
+create or replace procedure core.p_actualiza_reactor(
+                    in p_id             int,
+                    in p_nombre         varchar,
+                    in potencia          float,
+                    in estado            varchar,
+                    in fecha             timestamp
+) language plpgsql as
+$$
+    begin
+        -- Actualizamos la reactor
+        update core.reactores
+        set nombre = p_nombre,
+            potencia = p_potencia,
+            estado = p_estado,
+            fecha = p_fecha
+        where id = p_id;
+    end;
+$$;
+
+-- p_elimina_reactor
+create or replace procedure core.p_elimina_reactor(
+                    in p_id int
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+    begin
+        -- Eliminamos el reactor
+        delete from core.reactores
+        where id = p_id;
+    end;
+$$;

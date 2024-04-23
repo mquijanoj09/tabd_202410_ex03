@@ -16,7 +16,7 @@ namespace IAEA_CS_REST_API.Repositories
         {
             var conexion = contextoDB.CreateConnection();
 
-            string sentenciaSQL = "SELECT id, nombre " +
+            string sentenciaSQL = "SELECT id, tipo_nombre " +
                                   "FROM core.Tipos " +
                                   "ORDER BY id DESC";
 
@@ -35,10 +35,10 @@ namespace IAEA_CS_REST_API.Repositories
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@tipo_id", tipo_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre " +
+            string sentenciaSQL = "SELECT id, tipo_nombre " +
                                   "FROM core.Tipos " +
                                   "WHERE id = @tipo_id " +
-                                  "ORDER BY nombre";
+                                  "ORDER BY id DESC";
 
             var resultado = await conexion.QueryAsync<Tipo>(sentenciaSQL,
                 parametrosSentencia);
